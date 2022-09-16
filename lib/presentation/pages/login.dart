@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/pages/Lembur.dart';
-import 'package:flutter_application_1/presentation/pages/regis.dart';
+import 'regis.dart';
 import '../resources/warna.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -32,7 +30,7 @@ class _LoginState extends State<Login> {
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 24,
-                  color: Warna.warnahAbuTr,
+                  color: Warna.abuTr,
                 ),
               ),
             ),
@@ -55,16 +53,16 @@ class _LoginState extends State<Login> {
                   ),
                   TextField(
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email, color: Warna.warnahAbuTr),
+                        prefixIcon: Icon(Icons.email, color: Warna.abuTr),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Warna.warnahijau2,
+                            color: Warna.hijau2,
                             width: 1.0,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Warna.warnahijau2,
+                            color: Warna.hijau2,
                             width: 1.0,
                           ),
                         ),
@@ -94,16 +92,16 @@ class _LoginState extends State<Login> {
                   ),
                   TextField(
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock, color: Warna.warnahAbuTr),
+                        prefixIcon: Icon(Icons.lock, color: Warna.abuTr),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: HexColor("#019267"),
+                            color: Warna.borderside,
                             width: 1.0,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: HexColor("#019267"),
+                            color: Warna.borderside,
                             width: 1.0,
                           ),
                         ),
@@ -124,7 +122,7 @@ class _LoginState extends State<Login> {
               child: TextButton(
                 child: Text("Lupa Password ?"),
                 style: TextButton.styleFrom(
-                  primary: HexColor("#019267"),
+                  primary: Warna.borderside
                 ),
                 onPressed: () {},
               ),
@@ -135,7 +133,7 @@ class _LoginState extends State<Login> {
               padding: EdgeInsets.all(20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: HexColor("#019267"),
+                  primary: Warna.hijau2,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Masuk"),
@@ -154,7 +152,7 @@ class _LoginState extends State<Login> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
-                      color: HexColor('#C3C6C2'),
+                      color: Warna.noaccount
                     ),
                   ),
                   TextButton(
@@ -170,7 +168,7 @@ class _LoginState extends State<Login> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
-                        color: HexColor('#019267'),
+                        color: Warna.daftar,
                       ),
                     ),
                   )

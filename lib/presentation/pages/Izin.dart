@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
+import '../resources/warna.dart';
 
 class Izin extends StatefulWidget {
   const Izin({Key? key}) : super(key: key);
@@ -15,7 +13,7 @@ class _IzinState extends State<Izin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Warna.warnahhijauh2,
+        backgroundColor: Warna.hijau2,
         actions: [
           Container(
             margin: EdgeInsets.only(right: 20),
@@ -38,7 +36,7 @@ class _IzinState extends State<Izin> {
           "Pengajuan Izin",
           style: TextStyle(
               fontSize: 18,
-              color: Warna.warnahputihc,
+              color: Warna.putih,
               fontWeight: FontWeight.w700),
         ),
       ),
@@ -54,14 +52,14 @@ class _IzinState extends State<Izin> {
                     child: Text(
                       "Agustus 2022",
                       style: TextStyle(
-                        color: Warna.warnahijau2,
+                        color: Warna.putih,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    color: Warna.warnahijau2),
+                    color: Warna.hijau2),
                 IconButton(
                     icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     onPressed: () {}),
               ],
             ),
@@ -93,9 +91,9 @@ class _IzinState extends State<Izin> {
                       Text(
                         "Pengajuan Lembur",
                         style: TextStyle(
-                            backgroundColor: Warna.warnahhijauh2,
+                            backgroundColor: Warna.hijau2,
                             fontSize: 15,
-                            color: Warna.warnahhtam),
+                            color: Warna.htam),
                       ),
                       SizedBox(
                         width: 30,
@@ -105,9 +103,9 @@ class _IzinState extends State<Izin> {
                         child: Text(
                           "Belum Disetujui",
                           style: TextStyle(
-                            backgroundColor: Warna.warnahmrah,
+                            backgroundColor: Warna.mrah,
                             fontSize: 15,
-                            color: Warna.warnahhtam,
+                            color: Warna.htam,
                           ),
                         ),
                       ),
@@ -122,7 +120,7 @@ class _IzinState extends State<Izin> {
                         "Minggu 07 Agustus 2022",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                     ],
@@ -134,14 +132,14 @@ class _IzinState extends State<Izin> {
                     children: [
                       Icon(
                         Icons.date_range,
-                        color: Warna.warnahhtam,
+                        color: Warna.htam,
                         size: 20.0,
                       ),
                       Text(
                         "07 Agustus 2022 - 09 Agustus 2022",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -155,7 +153,7 @@ class _IzinState extends State<Izin> {
                         "Izin Cuti",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                       SizedBox(
@@ -165,7 +163,7 @@ class _IzinState extends State<Izin> {
                         "Pulang Kampung",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -201,9 +199,9 @@ class _IzinState extends State<Izin> {
                       Text(
                         "Pengajuan Lembur",
                         style: TextStyle(
-                            backgroundColor: Warna.warnahhijauh2,
+                            backgroundColor: Warna.hijau2,
                             fontSize: 15,
-                            color: Warna.warnahhtam),
+                            color: Warna.htam),
                       ),
                       SizedBox(
                         width: 30,
@@ -213,9 +211,9 @@ class _IzinState extends State<Izin> {
                         child: Text(
                           "Disetujui",
                           style: TextStyle(
-                            backgroundColor: Warna.warnahhjau,
+                            backgroundColor: Warna.hjau,
                             fontSize: 15,
-                            color: Warna.warnahhtam,
+                            color: Warna.htam,
                           ),
                         ),
                       ),
@@ -230,7 +228,7 @@ class _IzinState extends State<Izin> {
                         "Minggu 07 Agustus 2022",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                     ],
@@ -242,14 +240,14 @@ class _IzinState extends State<Izin> {
                     children: [
                       Icon(
                         Icons.date_range,
-                        color: Warna.warnahhtam,
+                        color: Warna.htam,
                         size: 20.0,
                       ),
                       Text(
                         "07 Agustus 2022 - 09 Agustus 2022",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -263,7 +261,7 @@ class _IzinState extends State<Izin> {
                         "Izin Cuti",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                       SizedBox(
@@ -273,7 +271,7 @@ class _IzinState extends State<Izin> {
                         "Pulang Kampung",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:flutter_application_1/presentation/widgets/FTextfield.dart';
+import '../resources/warna.dart';
+import '../widgets/FTextfield.dart';
 
 class TambhIzin extends StatefulWidget {
   const TambhIzin({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _TambhIzinState extends State<TambhIzin> {
     return Scaffold(
       appBar: AppBar(
         // leading: Icon(Icons.abc),
-        backgroundColor: Warna.warnahhijauh2,
+        backgroundColor: Warna.hijau2,
         actions: [
           Container(
             margin: EdgeInsets.only(right: 45),
@@ -29,7 +29,7 @@ class _TambhIzinState extends State<TambhIzin> {
           "Pengajuan Izin",
           style: TextStyle(
               fontSize: 18,
-              color: Warna.warnahputihc,
+              color: Warna.putih,
               fontWeight: FontWeight.w700),
         ),
       ),
@@ -45,15 +45,15 @@ class _TambhIzinState extends State<TambhIzin> {
                   child: Text(
                     "Agustus 2022",
                     style: TextStyle(
-                      color: Warna.warnahhijauh2,
+                      color: Warna.hijau2,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  color: Warna.warnahijau2,
+                  color: Warna.hijau2,
                 ),
                 IconButton(
                     icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     onPressed: () {}),
               ],
             ),
@@ -102,7 +102,7 @@ class _TambhIzinState extends State<TambhIzin> {
               padding: EdgeInsets.all(3),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Warna.warnahijau2,
+                  primary: Warna.hijau2,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Kirim"),

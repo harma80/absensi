@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:flutter_application_1/presentation/widgets/FTextfield.dart';
+import '../resources/warna.dart';
+import '../widgets/FTextfield.dart';
 
 class TambhKasbon extends StatefulWidget {
   const TambhKasbon({Key? key}) : super(key: key);
@@ -16,7 +14,7 @@ class _TambhKasbonState extends State<TambhKasbon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Warna.warnahhijauh2,
+        backgroundColor: Warna.hijau2,
         actions: [
           Container(
             margin: EdgeInsets.only(right: 45),
@@ -29,7 +27,7 @@ class _TambhKasbonState extends State<TambhKasbon> {
           "Pengajuan Kasbon",
           style: TextStyle(
               fontSize: 18,
-              color: Warna.warnahputihc,
+              color: Warna.putih,
               fontWeight: FontWeight.w700),
         ),
       ),
@@ -67,7 +65,7 @@ class _TambhKasbonState extends State<TambhKasbon> {
               padding: EdgeInsets.all(3),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Warna.warnahijau2,
+                  primary: Warna.hijau2,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Kirim"),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
+import '../resources/warna.dart';
 
 class FTextfield extends StatelessWidget {
   final String text;
@@ -31,23 +31,23 @@ class FTextfield extends StatelessWidget {
             decoration: InputDecoration(
                 suffixIcon: IconButton(
                   onPressed: () {},
-                  icon: Icon(icon, color: Warna.warnahAbuTr),
+                  icon: Icon(icon, color: Warna.abuTr),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     width: 1.0,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     width: 1.0,
                   ),
                 ),
                 hintText: placeholder,
                 hintStyle: TextStyle(
-                  color: Warna.warnaabuabu,
+                  color: Warna.abuabu,
                 ))),
       ],
     );

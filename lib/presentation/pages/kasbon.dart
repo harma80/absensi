@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
+import '../resources/warna.dart';
 
 class Kasbon extends StatefulWidget {
   const Kasbon({Key? key}) : super(key: key);
@@ -15,7 +13,7 @@ class _KasbonState extends State<Kasbon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Warna.warnahhijauh2,
+        backgroundColor: Warna.hijau2,
         actions: [
           Container(
             margin: EdgeInsets.only(right: 20),
@@ -38,7 +36,7 @@ class _KasbonState extends State<Kasbon> {
           "Pengajuan Izin",
           style: TextStyle(
               fontSize: 18,
-              color: Warna.warnahputihc,
+              color: Warna.putih,
               fontWeight: FontWeight.w700),
         ),
       ),
@@ -51,17 +49,17 @@ class _KasbonState extends State<Kasbon> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Title(
+                    color: Warna.hijau2,
                     child: Text(
                       "Agustus 2022",
                       style: TextStyle(
-                        color: Warna.warnahijau2,
+                        color: Warna.hijau2,
                         fontWeight: FontWeight.bold,
                       ),
-                    ),
-                    color: Warna.warnahijau2),
+                    )),
                 IconButton(
                     icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     onPressed: () {}),
               ],
             ),
@@ -93,9 +91,9 @@ class _KasbonState extends State<Kasbon> {
                       Text(
                         "Pengajuan Kasbon",
                         style: TextStyle(
-                            backgroundColor: Warna.warnahhijauh2,
+                            backgroundColor: Warna.hijau2,
                             fontSize: 15,
-                            color: Warna.warnahhtam),
+                            color: Warna.htam),
                       ),
                       SizedBox(
                         width: 30,
@@ -105,9 +103,9 @@ class _KasbonState extends State<Kasbon> {
                         child: Text(
                           "Belum Disetujui",
                           style: TextStyle(
-                            backgroundColor: Warna.warnahmrah,
+                            backgroundColor: Warna.mrah,
                             fontSize: 15,
-                            color: Warna.warnahhtam,
+                            color: Warna.htam,
                           ),
                         ),
                       ),
@@ -122,7 +120,7 @@ class _KasbonState extends State<Kasbon> {
                         "Minggu 07 Agustus 2022",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                     ],
@@ -134,7 +132,7 @@ class _KasbonState extends State<Kasbon> {
                     children: [
                       Icon(
                         Icons.monetization_on,
-                        color: Warna.warnahhijauh2,
+                        color: Warna.hijau2,
                         size: 20.0,
                       ),
                       SizedBox(
@@ -144,7 +142,7 @@ class _KasbonState extends State<Kasbon> {
                         "Rp.500.000",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -158,7 +156,7 @@ class _KasbonState extends State<Kasbon> {
                         "Biaya",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                       SizedBox(
@@ -168,7 +166,7 @@ class _KasbonState extends State<Kasbon> {
                         "Pulang Kampung",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -204,9 +202,9 @@ class _KasbonState extends State<Kasbon> {
                       Text(
                         "Pengajuan Kasbon",
                         style: TextStyle(
-                            backgroundColor: Warna.warnahhijauh2,
+                            backgroundColor: Warna.hijau2,
                             fontSize: 15,
-                            color: Warna.warnahhtam),
+                            color: Warna.htam),
                       ),
                       SizedBox(
                         width: 30,
@@ -216,9 +214,9 @@ class _KasbonState extends State<Kasbon> {
                         child: Text(
                           "Disetujui",
                           style: TextStyle(
-                            backgroundColor: Warna.warnahhjau,
+                            backgroundColor: Warna.hjau,
                             fontSize: 15,
-                            color: Warna.warnahhtam,
+                            color: Warna.htam,
                           ),
                         ),
                       ),
@@ -233,7 +231,7 @@ class _KasbonState extends State<Kasbon> {
                         "Minggu 07 Agustus 2022",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                     ],
@@ -245,7 +243,7 @@ class _KasbonState extends State<Kasbon> {
                     children: [
                       Icon(
                         Icons.monetization_on,
-                        color: Warna.warnahhijauh2,
+                        color: Warna.hijau2,
                         size: 20.0,
                       ),
                       SizedBox(
@@ -255,7 +253,7 @@ class _KasbonState extends State<Kasbon> {
                         "Rp.500.000",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -269,7 +267,7 @@ class _KasbonState extends State<Kasbon> {
                         "Biaya",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnahhtam,
+                          color: Warna.htam,
                         ),
                       ),
                       SizedBox(
@@ -279,7 +277,7 @@ class _KasbonState extends State<Kasbon> {
                         "Pulang Kampung",
                         style: TextStyle(
                           fontSize: 15,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],

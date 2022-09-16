@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
+import '../resources/warna.dart';
 
 class ItemPresensi extends StatelessWidget {
   final String text1;

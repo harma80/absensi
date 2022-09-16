@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/pages/Check.dart';
-import 'package:flutter_application_1/presentation/pages/Izin.dart';
-import 'package:flutter_application_1/presentation/pages/Lembur.dart';
-import 'package:flutter_application_1/presentation/pages/Scan.dart';
+import 'presentation/pages/Check.dart';
+import 'presentation/pages/Izin.dart';
+import 'presentation/pages/lembur.dart';
+import 'presentation/pages/scan.dart';
 //import 'package:flutter_application_1/presentation/pages/Izin.dart';
 //import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 //import 'package:flutter_application_1/presentation/pages/Scan.dart';

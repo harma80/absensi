@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/resources/gambar.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:flutter_application_1/presentation/widgets/formtext.dart';
+import '../resources/gambar.dart';
+import '../resources/warna.dart';
+import '../widgets/formtext.dart';
 
 class DataPresensi extends StatelessWidget {
   const DataPresensi({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class DataPresensi extends StatelessWidget {
                         "Harmayani",
                         style: TextStyle(
                           fontSize: 25,
-                          color: Warna.warnahputih,
+                          color: Warna.putih,
                         ),
                       ),
                     ),
@@ -49,7 +49,7 @@ class DataPresensi extends StatelessWidget {
                       "Karyawan",
                       style: TextStyle(
                         fontSize: 15,
-                        color: Warna.warnahkuning,
+                        color: Warna.kuning,
                       ),
                     ),
                   ],
@@ -71,7 +71,7 @@ class DataPresensi extends StatelessWidget {
               Text("Agustus 2022"),
               IconButton(
                   icon: Icon(Icons.keyboard_arrow_down),
-                  color: Warna.warnahijau2,
+                  color: Warna.hijau2,
                   onPressed: () {}),
             ],
           ),

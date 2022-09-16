@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
+import '../widgets/formcuxtom.dart';
 
 import '../resources/warna.dart';
 
@@ -24,7 +24,7 @@ class RegisState extends State<Regis> {
               child: Text(
                 "Registrasi",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: Warna.warnahAbuTr),
+                style: TextStyle(fontSize: 24, color: Warna.abuTr),
               ),
             ),
             SizedBox(
@@ -45,7 +45,7 @@ class RegisState extends State<Regis> {
               padding: EdgeInsets.all(3),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Warna.warnahijau2,
+                  primary: Warna.hijau2,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Masuk"),
@@ -64,7 +64,7 @@ class RegisState extends State<Regis> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Warna.warnaabuabu,
+                      color: Warna.abuabu,
                     ),
                   ),
                   TextButton(
@@ -74,7 +74,7 @@ class RegisState extends State<Regis> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
-                        color: Warna.warnahijau2,
+                        color: Warna.hijau2,
                       ),
                     ),
                   ),

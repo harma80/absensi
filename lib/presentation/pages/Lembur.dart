@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
+import '../resources/warna.dart';
 
 class Lembur extends StatefulWidget {
   const Lembur({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _LemburState extends State<Lembur> {
     return Scaffold(
       appBar: AppBar(
         // leading: Icon(Icons.abc),
-        backgroundColor: Warna.warnahijau2,
+        backgroundColor: Warna.hijau2,
         actions: [
           Container(
             margin: EdgeInsets.only(right: 20),
@@ -40,7 +40,7 @@ class _LemburState extends State<Lembur> {
           "Lembur",
           style: TextStyle(
               fontSize: 18,
-              color: Warna.warnahputihc,
+              color: Warna.putih,
               fontWeight: FontWeight.w700),
         ),
         // flexibleSpace: Positioned(
@@ -65,15 +65,15 @@ class _LemburState extends State<Lembur> {
                   child: Text(
                     "Agustus 2022",
                     style: TextStyle(
-                      color: Warna.warnahijau2,
+                      color: Warna.hijau2,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  color: Warna.warnahhijauh2,
+                  color: Warna.hijau2,
                 ),
                 IconButton(
                     icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.warnahijau2,
+                    color: Warna.hijau2,
                     onPressed: () {}),
               ],
             ),
@@ -104,7 +104,7 @@ class _LemburState extends State<Lembur> {
                     children: [
                       Icon(
                         Icons.date_range,
-                        color: Warna.warnahhtam,
+                        color: Warna.htam,
                         size: 20.0,
                       ),
                       Text(
@@ -112,7 +112,7 @@ class _LemburState extends State<Lembur> {
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],
@@ -126,7 +126,7 @@ class _LemburState extends State<Lembur> {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: Warna.warnaabuabu,
+                        color: Warna.abuabu,
                       ),
                     ),
                     SizedBox(
@@ -137,7 +137,7 @@ class _LemburState extends State<Lembur> {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        color: Warna.warnaabuabu,
+                        color: Warna.abuabu,
                       ),
                     ),
                   ]),
@@ -151,7 +151,7 @@ class _LemburState extends State<Lembur> {
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                       SizedBox(
@@ -162,7 +162,7 @@ class _LemburState extends State<Lembur> {
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
-                          color: Warna.warnaabuabu,
+                          color: Warna.abuabu,
                         ),
                       ),
                     ],

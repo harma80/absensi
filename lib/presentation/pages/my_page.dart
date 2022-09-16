@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/pages/data_presensi.dart';
-import 'package:flutter_application_1/presentation/pages/login.dart';
-import 'package:flutter_application_1/presentation/pages/regis.dart';
-import 'package:flutter_application_1/presentation/resources/gambar.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'data_presensi.dart';
+import 'login.dart';
+import 'regis.dart';
+import '../resources/warna.dart';
 import '../resources/warna.dart';
 
 class MyPages extends StatefulWidget {
@@ -16,7 +14,7 @@ class MyPages extends StatefulWidget {
 
 class MyPagesState extends State<MyPages> {
   int _selectedIndex = 0;
-  List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = <Widget>[
     DataPresensi(),
     Login(),
     Regis(),
@@ -36,7 +34,7 @@ class MyPagesState extends State<MyPages> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Warna.warnahijau2,
+        backgroundColor: Warna.hijau2,
         child: Icon(Icons.qr_code_scanner),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -44,9 +42,9 @@ class MyPagesState extends State<MyPages> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedIconTheme: IconThemeData(color: Warna.warnahijau2),
+        selectedIconTheme: IconThemeData(color: Warna.hijau2),
         unselectedIconTheme: IconThemeData(
-          color: Warna.warnahijau2,
+          color: Warna.hijau2,
           size: 24,
         ),
         items: [
@@ -71,7 +69,7 @@ class MyPagesState extends State<MyPages> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Warna.warnahijau2,
+        selectedItemColor: Warna.hijau2,
         onTap: _onItemTapped,
       ),
     );

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:hexcolor/hexcolor.dart';
+import '../resources/warna.dart';
 
 class Berhasil extends StatefulWidget {
   const Berhasil({Key? key}) : super(key: key);
@@ -21,7 +18,7 @@ class _BerhasilState extends State<Berhasil> {
           children: [
             Icon(
               Icons.done,
-              color: Warna.warnahhijauh2,
+              color: Warna.hijau2,
               size: 50.0,
             ),
             SizedBox(
@@ -32,7 +29,7 @@ class _BerhasilState extends State<Berhasil> {
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 24,
-                color: Warna.warnahhtam,
+                color: Warna.htam,
               ),
             ),
             SizedBox(
@@ -43,7 +40,7 @@ class _BerhasilState extends State<Berhasil> {
               padding: EdgeInsets.all(20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: HexColor("#019267"),
+                  primary: Warna.daftar,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Masuk"),
