@@ -13,6 +13,7 @@ class _CsanState extends State<Csan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(title: Text('Scan')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

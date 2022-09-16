@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Scan.dart';
 import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
 import 'data_presensi.dart';
 import 'login.dart';
@@ -33,7 +34,12 @@ class MyPagesState extends State<MyPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Csan()),
+          );
+        },
         backgroundColor: Warna.hijau2,
         child: Icon(Icons.qr_code_scanner),
       ),
