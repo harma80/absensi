@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/presentation/resources/warna.dart';
-import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
+import 'package:flutter_application_1/presentation/widgets/FTextfield.dart';
 
 class TambhIzin extends StatefulWidget {
   const TambhIzin({Key? key}) : super(key: key);
@@ -57,9 +55,59 @@ class _TambhIzinState extends State<TambhIzin> {
                     icon: Icon(Icons.keyboard_arrow_down),
                     color: Warna.warnahijau2,
                     onPressed: () {}),
-
-                // FormCustom(text: "Jenis Izin"),
               ],
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+              child: Column(
+                children: [
+                  FTextfield(
+                    icon: Icons.keyboard_arrow_down,
+                    text: 'Jenis Izin',
+                    placeholder: "Cuti/ Izin",
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  FTextfield(
+                    icon: Icons.date_range,
+                    text: 'Tanggal Izin',
+                    placeholder: "Tanggal",
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  FTextfield(
+                    icon: Icons.keyboard_arrow_down,
+                    text: 'Keterangan',
+                    placeholder: "Keterangan",
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  FTextfield(
+                    icon: Icons.keyboard_arrow_down,
+                    text: 'Foto',
+                    placeholder: "Keterangan",
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10),
+              width: double.infinity,
+              padding: EdgeInsets.all(3),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Warna.warnahijau2,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                ),
+                child: Text("Kirim"),
+                onPressed: () {},
+              ),
             ),
           ],
         ),

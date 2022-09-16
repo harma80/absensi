@@ -3,14 +3,14 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/presentation/resources/warna.dart';
 
-class Izin extends StatefulWidget {
-  const Izin({Key? key}) : super(key: key);
+class Kasbon extends StatefulWidget {
+  const Kasbon({Key? key}) : super(key: key);
 
   @override
-  State<Izin> createState() => _IzinState();
+  State<Kasbon> createState() => _KasbonState();
 }
 
-class _IzinState extends State<Izin> {
+class _KasbonState extends State<Kasbon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +91,7 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Text(
-                        "Pengajuan Lembur",
+                        "Pengajuan Kasbon",
                         style: TextStyle(
                             backgroundColor: Warna.warnahhijauh2,
                             fontSize: 15,
@@ -133,12 +133,15 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Icon(
-                        Icons.date_range,
-                        color: Warna.warnahhtam,
+                        Icons.monetization_on,
+                        color: Warna.warnahhijauh2,
                         size: 20.0,
                       ),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Text(
-                        "07 Agustus 2022 - 09 Agustus 2022",
+                        "Rp.500.000",
                         style: TextStyle(
                           fontSize: 15,
                           color: Warna.warnaabuabu,
@@ -152,7 +155,7 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Text(
-                        "Izin Cuti",
+                        "Biaya",
                         style: TextStyle(
                           fontSize: 15,
                           color: Warna.warnahhtam,
@@ -199,7 +202,7 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Text(
-                        "Pengajuan Lembur",
+                        "Pengajuan Kasbon",
                         style: TextStyle(
                             backgroundColor: Warna.warnahhijauh2,
                             fontSize: 15,
@@ -241,12 +244,15 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Icon(
-                        Icons.date_range,
-                        color: Warna.warnahhtam,
+                        Icons.monetization_on,
+                        color: Warna.warnahhijauh2,
                         size: 20.0,
                       ),
+                      SizedBox(
+                        width: 15,
+                      ),
                       Text(
-                        "07 Agustus 2022 - 09 Agustus 2022",
+                        "Rp.500.000",
                         style: TextStyle(
                           fontSize: 15,
                           color: Warna.warnaabuabu,
@@ -260,7 +266,7 @@ class _IzinState extends State<Izin> {
                   Row(
                     children: [
                       Text(
-                        "Izin Cuti",
+                        "Biaya",
                         style: TextStyle(
                           fontSize: 15,
                           color: Warna.warnahhtam,

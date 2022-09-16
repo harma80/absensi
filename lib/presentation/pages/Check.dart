@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/presentation/resources/gambar.dart';
 
 class CheckPage extends StatefulWidget {
@@ -15,16 +12,27 @@ class _CheckPageState extends State<CheckPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              //height: 100,
-              child: Image.asset(Gambar.check),
+      body: Column(
+        children: <Widget>[
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                    child: Image.asset(
+                  Gambar.checkin,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                )),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: Container(),
+                ),
+                Text(DateTime.now().toString())
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

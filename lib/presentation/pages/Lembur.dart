@@ -56,14 +56,120 @@ class _LemburState extends State<Lembur> {
       body: Container(
         margin: EdgeInsets.only(top: 20),
         padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
           children: [
-            Title(child: Text("Agustus 2022"), color: Warna.warnahijau2),
-            IconButton(
-                icon: Icon(Icons.keyboard_arrow_down),
-                color: Warna.warnahijau2,
-                onPressed: () {}),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Title(
+                  child: Text(
+                    "Agustus 2022",
+                    style: TextStyle(
+                      color: Warna.warnahijau2,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  color: Warna.warnahhijauh2,
+                ),
+                IconButton(
+                    icon: Icon(Icons.keyboard_arrow_down),
+                    color: Warna.warnahijau2,
+                    onPressed: () {}),
+              ],
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.symmetric(vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25), //border corner radius
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5), //color of shadow
+                    spreadRadius: 1, //spread radius
+                    blurRadius: 7, // blur radius
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.date_range,
+                        color: Warna.warnahhtam,
+                        size: 20.0,
+                      ),
+                      Text(
+                        "Minggu 07 Agustus 2022",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Warna.warnaabuabu,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(children: [
+                    Text(
+                      "Check In",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Warna.warnaabuabu,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 38,
+                    ),
+                    Text(
+                      "08:00",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Warna.warnaabuabu,
+                      ),
+                    ),
+                  ]),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Check out",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Warna.warnaabuabu,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      Text(
+                        "08:00",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                          color: Warna.warnaabuabu,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

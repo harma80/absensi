@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
+import 'package:flutter_application_1/presentation/pages/regis.dart';
 import '../resources/warna.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -161,7 +162,7 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Lembur()),
+                        MaterialPageRoute(builder: (context) => const Regis()),
                       );
                     },
                     child: Text(
