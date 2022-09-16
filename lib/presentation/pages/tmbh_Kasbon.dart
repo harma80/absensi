@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
 import '../resources/warna.dart';
-import '../widgets/FTextfield.dart';
 
 class TambhKasbon extends StatefulWidget {
   const TambhKasbon({Key? key}) : super(key: key);
@@ -26,35 +26,28 @@ class _TambhKasbonState extends State<TambhKasbon> {
         title: Text(
           "Pengajuan Kasbon",
           style: TextStyle(
-              fontSize: 18,
-              color: Warna.putih,
-              fontWeight: FontWeight.w700),
+              fontSize: 18, color: Warna.putih, fontWeight: FontWeight.w700),
         ),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
         child: Column(
           children: [
-            FTextfield(
-              icon: Icons.keyboard_arrow_down,
-              text: 'Jenis Izin',
-              placeholder: "Cuti/ Izin",
+            FormCustom(
+              text: 'Jumlah',
             ),
             SizedBox(
               height: 30,
             ),
-            FTextfield(
-              icon: Icons.date_range,
+            FormCustom(
+              suffixicon: Icon(Icons.date_range),
               text: 'Tanggal Izin',
-              placeholder: "Tanggal",
             ),
             SizedBox(
               height: 30,
             ),
-            FTextfield(
-              icon: Icons.keyboard_arrow_down,
+            FormCustom(
               text: 'Keterangan',
-              placeholder: "Keterangan",
             ),
             SizedBox(
               height: 30,

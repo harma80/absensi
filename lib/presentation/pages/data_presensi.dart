@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../resources/gambar.dart';
 import '../resources/warna.dart';
-import '../widgets/formtext.dart';
+import '../widgets/ItemPresensi.dart';
 
 class DataPresensi extends StatelessWidget {
   const DataPresensi({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
 import 'data_presensi.dart';
 import 'login.dart';
 import 'regis.dart';
-import '../resources/warna.dart';
 import '../resources/warna.dart';
 
 class MyPages extends StatefulWidget {
@@ -15,7 +15,7 @@ class MyPages extends StatefulWidget {
 class MyPagesState extends State<MyPages> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    DataPresensi(),
+    TambhIzin(),
     Login(),
     Regis(),
     Center(

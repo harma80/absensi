@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
 import 'regis.dart';
 import '../resources/warna.dart';
 
@@ -51,25 +52,7 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 8,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email, color: Warna.abuTr),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Warna.hijau2,
-                            width: 1.0,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Warna.hijau2,
-                            width: 1.0,
-                          ),
-                        ),
-                        hintText: "Enter your email",
-                        hintStyle: TextStyle(
-                            color: Color.fromRGBO(158, 163, 155, 0.5))),
-                  )
+                 FormCustom(text: 'Login')
                 ],
               ),
             ),
@@ -90,25 +73,7 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 8,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock, color: Warna.abuTr),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Warna.borderside,
-                            width: 1.0,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Warna.borderside,
-                            width: 1.0,
-                          ),
-                        ),
-                        hintText: "Enter your email",
-                        hintStyle: TextStyle(
-                            color: Color.fromRGBO(158, 163, 155, 0.5))),
-                  )
+                  FormCustom(text: 'Password')
                 ],
               ),
             ),
