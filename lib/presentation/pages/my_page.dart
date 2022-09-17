@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:flutter_application_1/presentation/pages/Izin.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
-=======
 import 'package:flutter_application_1/presentation/pages/Scan.dart';
->>>>>>> 1bf8b70f57cafecbb6045299b68bd79f39dd514d
 import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
 import 'package:flutter_application_1/presentation/pages/tmbh_Kasbon.dart';
 import 'data_presensi.dart';
