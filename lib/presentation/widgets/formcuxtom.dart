@@ -5,13 +5,27 @@ class FormCustom extends StatelessWidget {
   final String text;
   final Icon? prefixicon;
   final Icon? suffixicon;
-  const FormCustom({Key? key, required this.text, this.prefixicon,this.suffixicon}) : super(key: key);
+  final bool? readOnly;
+  final VoidCallback? onTap;
+  final TextEditingController? controller;
+  const FormCustom({
+    Key? key,
+    required this.text,
+    this.prefixicon,
+    this.suffixicon,
+    this.readOnly,
+    this.onTap,
+    this.controller,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: EdgeInsets.symmetric(vertical: 5),
         child: TextField(
+          controller: controller,
+          onTap: onTap,
+          readOnly: this.readOnly ?? false,
           decoration: InputDecoration(
               prefixIcon: null ?? this.prefixicon,
               suffixIcon: null ?? this.suffixicon,
@@ -29,6 +43,7 @@ class FormCustom extends StatelessWidget {
               ),
               hintText: this.text,
               hintStyle: TextStyle(color: Color.fromRGBO(158, 163, 155, 0.5))),
+          style: TextStyle(color: Warna.hijau2),
         ));
   }
 }

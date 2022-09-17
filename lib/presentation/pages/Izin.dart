@@ -35,9 +35,7 @@ class _IzinState extends State<Izin> {
         title: Text(
           "Pengajuan Izin",
           style: TextStyle(
-              fontSize: 18,
-              color: Warna.putih,
-              fontWeight: FontWeight.w700),
+              fontSize: 18, color: Warna.putih, fontWeight: FontWeight.w700),
         ),
       ),
       body: Container(
@@ -52,7 +50,7 @@ class _IzinState extends State<Izin> {
                     child: Text(
                       "Agustus 2022",
                       style: TextStyle(
-                        color: Warna.putih,
+                        color: Warna.hijau2,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

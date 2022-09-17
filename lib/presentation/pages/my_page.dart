@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Izin.dart';
+import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
+import 'package:flutter_application_1/presentation/pages/tmbh_Kasbon.dart';
 import 'data_presensi.dart';
 import 'login.dart';
 import 'regis.dart';
@@ -17,10 +20,8 @@ class MyPagesState extends State<MyPages> {
   final List<Widget> _widgetOptions = <Widget>[
     TambhIzin(),
     Login(),
-    Regis(),
-    Center(
-      child: Text('data'),
-    )
+    Izin(),
+    TambhKasbon()
   ];
 
   void _onItemTapped(int index) {

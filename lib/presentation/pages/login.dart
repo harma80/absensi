@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 8,
                   ),
-                 FormCustom(text: 'Login')
+                  FormCustom(text: 'Login')
                 ],
               ),
             ),
@@ -86,9 +86,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.centerRight,
               child: TextButton(
                 child: Text("Lupa Password ?"),
-                style: TextButton.styleFrom(
-                  primary: Warna.borderside
-                ),
+                style: TextButton.styleFrom(primary: Warna.borderside),
                 onPressed: () {},
               ),
             ),
@@ -115,10 +113,7 @@ class _LoginState extends State<Login> {
                   Text(
                     "Tidak Punya Akun ?",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Warna.noaccount
-                    ),
+                    style: TextStyle(fontSize: 15, color: Warna.noaccount),
                   ),
                   TextButton(
                     //untuk tombol kembali di lembur
@@ -133,7 +128,7 @@ class _LoginState extends State<Login> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
-                        color: Warna.daftar,
+                        color: Warna.hijau2,
                       ),
                     ),
                   )
