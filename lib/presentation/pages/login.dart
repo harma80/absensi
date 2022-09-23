@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Utils/Utils.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
 import 'regis.dart';
 import '../resources/warna.dart';
@@ -11,6 +14,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passworController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +58,10 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 8,
                   ),
-                  FormCustom(text: 'Login')
+                  FormCustom(
+                    text: 'Email',
+                    controller: emailController,
+                  )
                 ],
               ),
             ),
@@ -73,7 +82,10 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 8,
                   ),
-                  FormCustom(text: 'Password')
+                  FormCustom(
+                    text: 'Password',
+                    controller: passworController,
+                  )
                 ],
               ),
             ),
@@ -100,7 +112,9 @@ class _LoginState extends State<Login> {
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
                 child: Text("Masuk"),
-                onPressed: () {},
+                onPressed: () {
+                  signIn();
+                },
               ),
             ),
             SizedBox(height: 20),
@@ -139,5 +153,28 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  Future signIn() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+
+    try {
+      final res = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passworController.text.trim(),
+      );
+
+      Utils.showSnackBar("Berhasil Login.", Colors.green);
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    } on FirebaseAuthException catch (e) {
+      Navigator.of(context, rootNavigator: true).pop('dialog');
+      Utils.showSnackBar(e.message, Colors.red);
+    }
   }
 }

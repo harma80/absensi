@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
 import '../resources/warna.dart';
 
 class Izin extends StatefulWidget {
@@ -19,7 +20,8 @@ class _IzinState extends State<Izin> {
             margin: EdgeInsets.only(right: 20),
             child: IconButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TambhIzin()));
               },
               icon: Icon(
                 Icons.add,

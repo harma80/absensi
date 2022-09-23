@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Profil.dart';
 import 'package:intl/intl.dart';
 // import 'package:month_picker_dialog/month_picker_dialog.dart';
 import '../resources/gambar.dart';
@@ -60,7 +61,10 @@ class _DataPresensiState extends State<DataPresensi> {
                       height: 20,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Profil()));
+                      },
                       child: Text(
                         "Harmayani",
                         style: TextStyle(

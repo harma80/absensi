@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Check.dart';
 import 'package:intl/intl.dart';
 import '../resources/warna.dart';
 
@@ -40,7 +41,8 @@ class _LemburState extends State<Lembur> {
             margin: EdgeInsets.only(right: 20),
             child: IconButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CheckPage()));
               },
               icon: Icon(
                 Icons.add,

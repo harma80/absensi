@@ -1,4 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Utils/Utils.dart';
+import 'package:flutter_application_1/main.dart';
 import '../widgets/formcuxtom.dart';
 
 import '../resources/warna.dart';
@@ -11,6 +15,13 @@ class Regis extends StatefulWidget {
 }
 
 class RegisState extends State<Regis> {
+  final namaController = TextEditingController();
+  final alamatController = TextEditingController();
+  final hpController = TextEditingController();
+  final rekController = TextEditingController();
+  final emailController = TextEditingController();
+  final passworController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +41,27 @@ class RegisState extends State<Regis> {
             SizedBox(
               height: 8,
             ),
-            FormCustom(text: "Nama"),
-            FormCustom(text: "Alamat"),
-            FormCustom(text: "No Hp"),
-            FormCustom(text: "No Rekening"),
-            FormCustom(text: "Email"),
-            FormCustom(text: "Password"),
+            FormCustom(
+              text: "Nama",
+              controller: namaController,
+            ),
+            FormCustom(text: "Alamat", controller: alamatController),
+            FormCustom(
+              text: "No Hp",
+              controller: hpController,
+            ),
+            FormCustom(
+              text: "No Rekening",
+              controller: rekController,
+            ),
+            FormCustom(
+              text: "Email",
+              controller: emailController,
+            ),
+            FormCustom(
+              text: "Password",
+              controller: passworController,
+            ),
             SizedBox(
               height: 20,
             ),
@@ -48,8 +74,10 @@ class RegisState extends State<Regis> {
                   primary: Warna.hijau2,
                   padding: EdgeInsets.symmetric(vertical: 20),
                 ),
-                child: Text("Masuk"),
-                onPressed: () {},
+                child: Text("Daftar"),
+                onPressed: () {
+                  signUp();
+                },
               ),
             ),
             SizedBox(height: 20),
@@ -85,5 +113,42 @@ class RegisState extends State<Regis> {
         ),
       ),
     );
+  }
+
+  Future signUp() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+
+    try {
+      final res = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passworController.text.trim(),
+      );
+
+      final docUser =
+          FirebaseFirestore.instance.collection("users").doc(res.user!.uid);
+      final json = {
+        "email": emailController.text.trim(),
+        "nama": namaController.text.trim(),
+        "no_rekening": rekController.text.trim(),
+        "alamat": alamatController.text.trim(),
+        "no_hp": hpController.text.trim(),
+        "uid": res.user!.uid,
+        "created_at": DateTime.now()
+      };
+
+      await docUser.set(json);
+
+      Utils.showSnackBar("Berhasil Daftar.", Colors.green);
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    } on FirebaseAuthException catch (e) {
+      Navigator.of(context, rootNavigator: true).pop('dialog');
+      Utils.showSnackBar(e.message, Colors.red);
+    }
   }
 }
