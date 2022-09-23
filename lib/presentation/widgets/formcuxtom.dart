@@ -43,7 +43,7 @@ class FormCustom extends StatelessWidget {
               ),
               hintText: this.text,
               hintStyle: TextStyle(color: Color.fromRGBO(158, 163, 155, 0.5))),
-          style: TextStyle(color: Warna.hijau2),
+          style: TextStyle(color: Warna.htam),
         ));
   }
 }

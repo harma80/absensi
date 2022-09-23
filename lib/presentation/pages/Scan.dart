@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Check.dart';
 import 'Izin.dart';
 import '../resources/warna.dart';
 
@@ -34,14 +35,14 @@ class _CsanState extends State<Csan> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Izin()),
+                MaterialPageRoute(builder: (context) => const CheckPage()),
               );
             },
             child: Text(
-              "Daftar",
+              "Back",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 15,
                 color: Warna.hijau2,
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:flutter_application_1/presentation/pages/Izin.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 import 'package:flutter_application_1/presentation/pages/Scan.dart';
 import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
+import 'package:flutter_application_1/presentation/pages/kasbon.dart';
 import 'package:flutter_application_1/presentation/pages/tmbh_Kasbon.dart';
 import 'data_presensi.dart';
 import 'login.dart';
@@ -19,10 +20,10 @@ class MyPages extends StatefulWidget {
 class MyPagesState extends State<MyPages> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    TambhIzin(),
-    Login(),
-    Izin(),
-    TambhKasbon()
+    DataPresensi(),
+    Lembur(),
+    Kasbon(),
+    Izin()
   ];
 
   void _onItemTapped(int index) {

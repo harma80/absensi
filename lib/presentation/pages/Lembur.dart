@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../resources/warna.dart';
 
 class Lembur extends StatefulWidget {
@@ -11,6 +10,25 @@ class Lembur extends StatefulWidget {
 }
 
 class _LemburState extends State<Lembur> {
+  DateTime selectedPeriod = DateTime.now();
+  bool show = false;
+
+  Future<DateTime> _selectPeriod(BuildContext context) async {
+    final selected = await showDatePicker(
+        context: context,
+        initialDate: selectedPeriod,
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2025));
+    if (selected != null && selected != selectedPeriod) {
+      setState(() {
+        selectedPeriod = selected;
+      });
+    }
+    return selectedPeriod;
+  }
+
+  Future<void> doSomeAsyncStuff() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +57,7 @@ class _LemburState extends State<Lembur> {
         title: Text(
           "Lembur",
           style: TextStyle(
-              fontSize: 18,
-              color: Warna.putih,
-              fontWeight: FontWeight.w700),
+              fontSize: 18, color: Warna.putih, fontWeight: FontWeight.w700),
         ),
         // flexibleSpace: Positioned(
         //   bottom: 0,
@@ -58,24 +74,27 @@ class _LemburState extends State<Lembur> {
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Title(
-                  child: Text(
-                    "Agustus 2022",
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              //margin: EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    DateFormat('MMMM yyyy').format(selectedPeriod),
                     style: TextStyle(
-                      color: Warna.hijau2,
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: Warna.hijau2, fontWeight: FontWeight.bold),
                   ),
-                  color: Warna.hijau2,
-                ),
-                IconButton(
-                    icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.hijau2,
-                    onPressed: () {}),
-              ],
+                  IconButton(
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      color: Warna.hijau2,
+                      onPressed: () {
+                        _selectPeriod(context);
+                        show = true;
+                      }),
+                ],
+              ),
             ),
             Container(
               alignment: Alignment.centerLeft,

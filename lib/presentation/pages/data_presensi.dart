@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+// import 'package:month_picker_dialog/month_picker_dialog.dart';
 import '../resources/gambar.dart';
 import '../resources/warna.dart';
 import '../widgets/ItemPresensi.dart';
+// import 'package:month_year_picker/month_year_picker.dart';
 
-class DataPresensi extends StatelessWidget {
+class DataPresensi extends StatefulWidget {
   const DataPresensi({Key? key}) : super(key: key);
+
+  @override
+  State<DataPresensi> createState() => _DataPresensiState();
+}
+
+class _DataPresensiState extends State<DataPresensi> {
+  DateTime selectedPeriod = DateTime.now();
+  bool show = false;
+
+  Future<DateTime> _selectPeriod(BuildContext context) async {
+    final selected = await showDatePicker(
+        context: context,
+        initialDate: selectedPeriod,
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2025));
+    if (selected != null && selected != selectedPeriod) {
+      setState(() {
+        selectedPeriod = selected;
+      });
+    }
+    return selectedPeriod;
+  }
+
+  Future<void> doSomeAsyncStuff() async {}
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +95,18 @@ class DataPresensi extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Agustus 2022"),
+              Text(
+                DateFormat('MMMM yyyy').format(selectedPeriod),
+                style:
+                    TextStyle(color: Warna.hijau2, fontWeight: FontWeight.bold),
+              ),
               IconButton(
                   icon: Icon(Icons.keyboard_arrow_down),
                   color: Warna.hijau2,
-                  onPressed: () {}),
+                  onPressed: () {
+                    _selectPeriod(context);
+                    show = true;
+                  }),
             ],
           ),
         ),

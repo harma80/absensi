@@ -47,6 +47,16 @@ class _TambhKasbonState extends State<TambhKasbon> {
         actions: [
           Container(
             margin: EdgeInsets.only(right: 45),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.add,
+                size: 30,
+                color: Colors.white,
+              ),
+            ),
           ),
           SizedBox(
             height: 5,
@@ -63,25 +73,6 @@ class _TambhKasbonState extends State<TambhKasbon> {
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Title(
-                  child: Text(
-                    "Agustus 2022",
-                    style: TextStyle(
-                      color: Warna.hijau2,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  color: Warna.hijau2,
-                ),
-                IconButton(
-                    icon: Icon(Icons.keyboard_arrow_down),
-                    color: Warna.hijau2,
-                    onPressed: () {}),
-              ],
-            ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10),
               child: Column(
