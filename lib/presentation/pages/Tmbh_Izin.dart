@@ -111,7 +111,7 @@ class _TambhIzinState extends State<TambhIzin> {
       var snapshot = await FirebaseStorage.instance
           .ref()
           .child("images")
-          .child("/bukti.jpg")
+          .child('${DateTime.now()}-bukti.jpg')
           .putFile(image!);
       var downloadUrl = await snapshot.ref.getDownloadURL();
 
@@ -122,9 +122,10 @@ class _TambhIzinState extends State<TambhIzin> {
         "jenis": dropDownValue,
         "tanggal_mulai": selectedDate,
         "tanggal_selesai": selectedDate1,
-        "keterangan ": keteranganController.text.trim(),
+        "keterangan": keteranganController.text.trim(),
         "status": "0",
-        "image": downloadUrl
+        "image": downloadUrl,
+        "month": DateFormat("MMMM").format(DateTime.now())
       };
 
       await doc.add(json);

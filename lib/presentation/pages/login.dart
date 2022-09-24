@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utils/Utils.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/presentation/widgets/formcuxtom.dart';
 import 'regis.dart';
 import '../resources/warna.dart';
+import 'package:platform_device_id/platform_device_id.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -156,25 +158,46 @@ class _LoginState extends State<Login> {
   }
 
   Future signIn() async {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+    final user = await FirebaseFirestore.instance
+        .collection("users")
+        .where("email", isEqualTo: emailController.text.trim())
+        .get();
 
-    try {
-      final res = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passworController.text.trim(),
+    if (user.docs.length > 0) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => Center(
+          child: CircularProgressIndicator(),
+        ),
       );
 
-      Utils.showSnackBar("Berhasil Login.", Colors.green);
-      navigatorKey.currentState!.popUntil((route) => route.isFirst);
-    } on FirebaseAuthException catch (e) {
-      Navigator.of(context, rootNavigator: true).pop('dialog');
-      Utils.showSnackBar(e.message, Colors.red);
+      String? e = user.docs[0]["email"];
+      String? id = user.docs[0]["device_id"];
+      String? device_id = await PlatformDeviceId.getDeviceId;
+
+      if (id != device_id) {
+        Navigator.of(context, rootNavigator: true).pop('dialog');
+        Utils.showSnackBar(
+            "Device yang digunakan untuk login tidak sama dengan device untuk register.",
+            Colors.red);
+      } else {
+        try {
+          final res = await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passworController.text.trim(),
+          );
+
+          Utils.showSnackBar("Berhasil Login.", Colors.green);
+          navigatorKey.currentState!.popUntil((route) => route.isFirst);
+        } on FirebaseAuthException catch (e) {
+          Navigator.of(context, rootNavigator: true).pop('dialog');
+          Utils.showSnackBar(e.message, Colors.red);
+        }
+      }
+    } else {
+      // Navigator.of(context, rootNavigator: true).pop('dialog');
+      Utils.showSnackBar("User tidak ditemukan.", Colors.red);
     }
   }
 }

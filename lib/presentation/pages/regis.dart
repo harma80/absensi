@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utils/Utils.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:platform_device_id/platform_device_id.dart';
 import '../widgets/formcuxtom.dart';
 
 import '../resources/warna.dart';
@@ -130,6 +131,8 @@ class RegisState extends State<Regis> {
         password: passworController.text.trim(),
       );
 
+      String? deviceId = await PlatformDeviceId.getDeviceId;
+
       final docUser =
           FirebaseFirestore.instance.collection("users").doc(res.user!.uid);
       final json = {
@@ -139,7 +142,8 @@ class RegisState extends State<Regis> {
         "alamat": alamatController.text.trim(),
         "no_hp": hpController.text.trim(),
         "uid": res.user!.uid,
-        "created_at": DateTime.now()
+        "created_at": DateTime.now(),
+        "device_id": deviceId
       };
 
       await docUser.set(json);
