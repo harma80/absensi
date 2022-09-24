@@ -58,7 +58,7 @@ class _DataPresensiState extends State<DataPresensi> {
                       backgroundImage: AssetImage(Gambar.logouin),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 8,
                     ),
                     TextButton(
                       onPressed: () {
@@ -72,9 +72,6 @@ class _DataPresensiState extends State<DataPresensi> {
                           color: Warna.putih,
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 8,
                     ),
                     Text(
                       "Karyawan",

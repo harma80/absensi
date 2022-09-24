@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Check.dart';
 import 'package:flutter_application_1/presentation/pages/Izin.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 import 'package:flutter_application_1/presentation/pages/Scan.dart';
@@ -39,7 +40,7 @@ class MyPagesState extends State<MyPages> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Csan()),
+            MaterialPageRoute(builder: (context) => const CheckPage()),
           );
         },
         backgroundColor: Warna.hijau2,

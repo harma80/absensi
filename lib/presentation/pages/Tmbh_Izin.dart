@@ -28,8 +28,6 @@ class _TambhIzinState extends State<TambhIzin> {
     'Cuti',
   ];
 
-  DateTime selectedDate2 = DateTime.now();
-  bool isSelected2 = false;
   DateTime selectedDate = DateTime.now();
   bool isSelected = false;
   bool showDate = false;
@@ -66,21 +64,6 @@ class _TambhIzinState extends State<TambhIzin> {
       });
     }
     return selectedDate1;
-  }
-
-  Future<DateTime> _selectDate2(BuildContext context) async {
-    final selected = await showDatePicker(
-      context: context,
-      initialDate: selectedDate2,
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2025),
-    );
-    if (selected != null && selected != selectedDate2) {
-      setState(() {
-        selectedDate2 = selected;
-      });
-    }
-    return selectedDate2;
   }
 
   String getDate() {

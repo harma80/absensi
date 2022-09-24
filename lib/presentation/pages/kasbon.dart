@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/tmbh_Kasbon.dart';
 import '../resources/warna.dart';
+import 'package:intl/intl.dart';
 
 class Kasbon extends StatefulWidget {
   const Kasbon({Key? key}) : super(key: key);
@@ -9,6 +11,23 @@ class Kasbon extends StatefulWidget {
 }
 
 class _KasbonState extends State<Kasbon> {
+  DateTime selectedPeriod = DateTime.now();
+  bool show = false;
+
+  Future<DateTime> _selectPeriod(BuildContext context) async {
+    final selected = await showDatePicker(
+        context: context,
+        initialDate: selectedPeriod,
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2025));
+    if (selected != null && selected != selectedPeriod) {
+      setState(() {
+        selectedPeriod = selected;
+      });
+    }
+    return selectedPeriod;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +38,8 @@ class _KasbonState extends State<Kasbon> {
             margin: EdgeInsets.only(right: 20),
             child: IconButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TambhKasbon()));
               },
               icon: Icon(
                 Icons.add,
@@ -33,11 +53,9 @@ class _KasbonState extends State<Kasbon> {
           ),
         ],
         title: Text(
-          "Pengajuan Izin",
+          "Pengajuan Kasbon",
           style: TextStyle(
-              fontSize: 18,
-              color: Warna.putih,
-              fontWeight: FontWeight.w700),
+              fontSize: 18, color: Warna.putih, fontWeight: FontWeight.w700),
         ),
       ),
       body: Container(
@@ -48,19 +66,18 @@ class _KasbonState extends State<Kasbon> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Title(
-                    color: Warna.hijau2,
-                    child: Text(
-                      "Agustus 2022",
-                      style: TextStyle(
-                        color: Warna.hijau2,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
+                Text(
+                  DateFormat('MMMM yyyy').format(selectedPeriod),
+                  style: TextStyle(
+                      color: Warna.hijau2, fontWeight: FontWeight.bold),
+                ),
                 IconButton(
                     icon: Icon(Icons.keyboard_arrow_down),
                     color: Warna.hijau2,
-                    onPressed: () {}),
+                    onPressed: () {
+                      _selectPeriod(context);
+                      show = true;
+                    }),
               ],
             ),
             Container(

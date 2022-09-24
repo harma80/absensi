@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/pages/Scan.dart';
 import 'package:flutter_application_1/presentation/resources/warna.dart';
 import '../resources/gambar.dart';
 import 'package:intl/intl.dart';
@@ -21,7 +22,7 @@ class _CheckPageState extends State<CheckPage> {
               children: [
                 Container(
                     child: Image.asset(
-                  Gambar.checkin,
+                  Gambar.check,
                   fit: BoxFit.cover,
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height * 0.4,
@@ -77,7 +78,10 @@ class _CheckPageState extends State<CheckPage> {
                       padding: EdgeInsets.symmetric(vertical: 20),
                     ),
                     child: Text("Check In"),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Csan()));
+                    },
                   ),
                 ),
               ],
