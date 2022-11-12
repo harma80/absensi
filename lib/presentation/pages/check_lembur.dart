@@ -5,22 +5,20 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Utils/Utils.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 import 'package:flutter_application_1/presentation/pages/Scan.dart';
-import 'package:flutter_application_1/presentation/pages/data_presensi.dart';
-import 'package:flutter_application_1/presentation/pages/my_page.dart';
 import 'package:flutter_application_1/presentation/resources/warna.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import '../resources/gambar.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:intl/intl.dart';
 
-class CheckPage extends StatefulWidget {
-  const CheckPage({Key? key}) : super(key: key);
+class Check_lemburPage extends StatefulWidget {
+  const Check_lemburPage({Key? key}) : super(key: key);
 
   @override
-  State<CheckPage> createState() => _CheckPageState();
+  State<Check_lemburPage> createState() => _Check_lemburPageState();
 }
 
-class _CheckPageState extends State<CheckPage> {
+class _Check_lemburPageState extends State<Check_lemburPage> {
   Future scanQR() async {
     //String barcodeScanRes;
     // Platform messages may fail, so we use a try/catch PlatformException.
@@ -39,17 +37,10 @@ class _CheckPageState extends State<CheckPage> {
       );
 
       try {
-        final docUser = await FirebaseFirestore.instance
-            .collection("users")
-            .where("email", isEqualTo: user!.email)
-            .get();
-        String nama = docUser.docs[0]["nama"];
-
-        final doc = FirebaseFirestore.instance.collection("absen");
+        final doc = FirebaseFirestore.instance.collection("presensi");
         DateTime now = DateTime.now();
         final json = {
-          "nama": nama,
-          //"email": user!.email,
+          "email": user!.email,
           "created_at": now,
           "check_in": now,
           "check_out": "",
@@ -98,7 +89,7 @@ class _CheckPageState extends State<CheckPage> {
       );
 
       try {
-        final doc = FirebaseFirestore.instance.collection("absen").doc(id);
+        final doc = FirebaseFirestore.instance.collection("presensi").doc(id);
         DateTime now = DateTime.now();
         final json = {
           "check_out": now,
@@ -135,8 +126,8 @@ class _CheckPageState extends State<CheckPage> {
     return Scaffold(
       body: StreamBuilder<QuerySnapshot>(
           stream: firestore
-              .collection("absen")
-              // .where("email", isEqualTo: user!.email)
+              .collection("presensi")
+              .where("email", isEqualTo: user!.email)
               .where("tanggal",
                   isEqualTo:
                       DateFormat("EEEE, dd MMMM yyyy").format(DateTime.now()))
@@ -168,25 +159,39 @@ class _CheckPageState extends State<CheckPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Container(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  IconButton(
-                                      icon: Icon(Icons.arrow_back),
-                                      color: Warna.putih,
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    MyPages()));
-                                      }),
-                                ],
+                            // Container(
+                            //   child: Row(
+                            //     mainAxisAlignment: MainAxisAlignment.start,
+                            //     children: [
+                            //       IconButton(
+                            //           icon: Icon(Icons.arrow_back),
+                            //           color: Warna.putih,
+                            //           onPressed: () {
+                            //             Navigator.push(
+                            //                 context,
+                            //                 MaterialPageRoute(
+                            //                     builder: (context) =>
+                            //                         Lembur()));
+                            //           }),
+                            //     ],
+                            //   ),
+                            // ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Title(
+                              color: Warna.hijau2,
+                              child: Text(
+                                'Lembur',
+                                style: TextStyle(
+                                  color: Warna.putih,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 15,
                             ),
                             Title(
                               color: Warna.putih,

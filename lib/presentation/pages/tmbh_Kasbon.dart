@@ -59,14 +59,28 @@ class _TambhKasbonState extends State<TambhKasbon> {
     );
 
     try {
-      final doc = FirebaseFirestore.instance.collection("Kasbon");
+      final docUser = await FirebaseFirestore.instance
+          .collection("users")
+          .where("email", isEqualTo: user!.email)
+          .get();
+
+      String nama = docUser.docs[0]["nama"];
+
+      final doc = FirebaseFirestore.instance.collection("pengajuan");
       final json = {
-        "email": user!.email,
+        "email": user.email,
         "created_at": DateTime.now(),
-        "jumlah": jumlahController.text.trim(),
+        "biaya": jumlahController.text.trim(),
         "tanggal": selectedDate,
-        "keterangan ": keteranganController.text.trim(),
+        "keterangan": keteranganController.text.trim(),
         "status": "0",
+        "month": DateFormat("MMMM").format(DateTime.now()),
+        "tipe_pengajuan": 'Kasbon',
+        "tanggal_mulai": "-",
+        "tanggal_selesai": '-',
+        "jenis": '-',
+        "image": '-',
+        "nama": nama
       };
 
       await doc.add(json);

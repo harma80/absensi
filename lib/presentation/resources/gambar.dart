@@ -5,4 +5,5 @@ class Gambar {
   static String logouin = "assets/download.png";
   static String home1 = "assets/home1.png";
   static String check = "assets/checkini.png";
+  static String lmbur = "assets/lmbur.png";
 }

@@ -97,7 +97,8 @@ class _IzinState extends State<Izin> {
               padding: EdgeInsets.only(bottom: 25),
               child: StreamBuilder<QuerySnapshot>(
                 stream: firestore
-                    .collection("izin")
+                    .collection("pengajuan")
+                    .where("tipe_pengajuan", isEqualTo: "Izin")
                     .where("email", isEqualTo: user!.email)
                     .where("month",
                         isEqualTo: DateFormat("MMMM").format(selectedPeriod))
@@ -113,6 +114,7 @@ class _IzinState extends State<Izin> {
                             DocumentSnapshot data = snapshot.data!.docs[index];
                             return ItemCard(
                                 jenis: data['jenis'],
+                                status: data['status'],
                                 ket: data['keterangan'],
                                 approve: data['status'],
                                 created_at: DateFormat('EEEE dd MMMM yyyy')
@@ -137,6 +139,7 @@ class _IzinState extends State<Izin> {
 
   Container ItemCard(
       {String? jenis,
+      String? status,
       String? ket,
       String? approve,
       String? created_at,
@@ -144,8 +147,8 @@ class _IzinState extends State<Izin> {
       String? selesai}) {
     return Container(
       alignment: Alignment.centerLeft,
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       height: 160,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -180,9 +183,17 @@ class _IzinState extends State<Izin> {
               TextButton(
                 onPressed: () {},
                 child: Text(
-                  approve == "1" ? "Disetujui" : "Belum Disetujui",
+                  status == "0"
+                      ? "Belum Disetujui"
+                      : status == "1"
+                          ? "Disetujui"
+                          : "Ditolak",
                   style: TextStyle(
-                    backgroundColor: approve == "1" ? Warna.hjau : Warna.mrah,
+                    backgroundColor: status == "0"
+                        ? Colors.amber
+                        : status == "1"
+                            ? Warna.hijau2
+                            : Warna.mrah,
                     fontSize: 15,
                     color: Warna.htam,
                   ),

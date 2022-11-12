@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utils/Utils.dart';
 import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/presentation/pages/login.dart';
 import 'package:platform_device_id/platform_device_id.dart';
 import '../widgets/formcuxtom.dart';
 
@@ -26,91 +27,99 @@ class RegisState extends State<Regis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 35),
-              width: double.infinity,
-              child: Text(
-                "Registrasi",
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 24, color: Warna.abuTr),
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            FormCustom(
-              text: "Nama",
-              controller: namaController,
-            ),
-            FormCustom(text: "Alamat", controller: alamatController),
-            FormCustom(
-              text: "No Hp",
-              controller: hpController,
-            ),
-            FormCustom(
-              text: "No Rekening",
-              controller: rekController,
-            ),
-            FormCustom(
-              text: "Email",
-              controller: emailController,
-            ),
-            FormCustom(
-              text: "Password",
-              controller: passworController,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
-              width: double.infinity,
-              padding: EdgeInsets.all(3),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Warna.hijau2,
-                  padding: EdgeInsets.symmetric(vertical: 20),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 35),
+                width: double.infinity,
+                child: Text(
+                  "Registrasi",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 24, color: Warna.abuTr),
                 ),
-                child: Text("Daftar"),
-                onPressed: () {
-                  signUp();
-                },
               ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Sudah Punya Akun ?",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Warna.abuabu,
-                    ),
+              SizedBox(
+                height: 8,
+              ),
+              FormCustom(
+                text: "Nama",
+                controller: namaController,
+              ),
+              FormCustom(text: "Alamat", controller: alamatController),
+              FormCustom(
+                text: "No Hp",
+                controller: hpController,
+              ),
+              FormCustom(
+                text: "No Rekening",
+                controller: rekController,
+              ),
+              FormCustom(
+                text: "Email",
+                controller: emailController,
+              ),
+              FormCustom(
+                text: "Password",
+                controller: passworController,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                width: double.infinity,
+                padding: EdgeInsets.all(3),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Warna.hijau2,
+                    padding: EdgeInsets.symmetric(vertical: 20),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Login",
+                  child: Text("Daftar"),
+                  onPressed: () {
+                    signUp();
+                  },
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Sudah Punya Akun ?",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
-                        color: Warna.hijau2,
+                        color: Warna.abuabu,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Login()),
+                        );
+                      },
+                      child: Text(
+                        "Login",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Warna.hijau2,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:flutter_application_1/presentation/pages/Izin.dart';
 import 'package:flutter_application_1/presentation/pages/Lembur.dart';
 import 'package:flutter_application_1/presentation/pages/Scan.dart';
 import 'package:flutter_application_1/presentation/pages/Tmbh_Izin.dart';
+import 'package:flutter_application_1/presentation/pages/check_lembur.dart';
 import 'package:flutter_application_1/presentation/pages/kasbon.dart';
 import 'package:flutter_application_1/presentation/pages/tmbh_Kasbon.dart';
 import 'data_presensi.dart';
@@ -22,7 +23,7 @@ class MyPagesState extends State<MyPages> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
     DataPresensi(),
-    Lembur(),
+    Check_lemburPage(),
     Kasbon(),
     Izin()
   ];
@@ -51,9 +52,11 @@ class MyPagesState extends State<MyPages> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedIconTheme: IconThemeData(color: Warna.hijau2),
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Warna.hijau2,
+        selectedIconTheme: IconThemeData(color: Warna.kuning),
         unselectedIconTheme: IconThemeData(
-          color: Warna.hijau2,
+          color: Warna.putih,
           size: 24,
         ),
         items: [
@@ -61,7 +64,7 @@ class MyPagesState extends State<MyPages> {
             icon: Icon(
               Icons.wysiwyg,
             ),
-            label: 'Data Presensi',
+            label: 'Data',
             //backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
@@ -78,7 +81,8 @@ class MyPagesState extends State<MyPages> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Warna.hijau2,
+        selectedItemColor: Warna.kuning,
+        unselectedItemColor: Warna.putih,
         onTap: _onItemTapped,
       ),
     );

@@ -86,7 +86,7 @@ class _TambhIzinState extends State<TambhIzin> {
 
   Future pikcImage() async {
     try {
-      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      final image = await ImagePicker().pickImage(source: ImageSource.camera);
       if (image == null) return;
 
       final imgTmp = File(image.path);
@@ -108,6 +108,13 @@ class _TambhIzinState extends State<TambhIzin> {
     );
 
     try {
+      final docUser = await FirebaseFirestore.instance
+          .collection("users")
+          .where("email", isEqualTo: user!.email)
+          .get();
+
+      String nama = docUser.docs[0]["nama"];
+
       var snapshot = await FirebaseStorage.instance
           .ref()
           .child("images")
@@ -115,9 +122,9 @@ class _TambhIzinState extends State<TambhIzin> {
           .putFile(image!);
       var downloadUrl = await snapshot.ref.getDownloadURL();
 
-      final doc = FirebaseFirestore.instance.collection("izin");
+      final doc = FirebaseFirestore.instance.collection("pengajuan");
       final json = {
-        "email": user!.email,
+        "email": user.email,
         "created_at": DateTime.now(),
         "jenis": dropDownValue,
         "tanggal_mulai": selectedDate,
@@ -125,7 +132,11 @@ class _TambhIzinState extends State<TambhIzin> {
         "keterangan": keteranganController.text.trim(),
         "status": "0",
         "image": downloadUrl,
-        "month": DateFormat("MMMM").format(DateTime.now())
+        "month": DateFormat("MMMM").format(DateTime.now()),
+        "tipe_pengajuan": 'Izin',
+        "biaya": "-",
+        "tanggal": '-',
+        "nama": nama
       };
 
       await doc.add(json);
